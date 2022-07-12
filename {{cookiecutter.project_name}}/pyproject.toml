@@ -15,6 +15,7 @@ readme = "README.md"
 python = "^3.9"
 pydantic = "^1.8.2"
 python-dotenv = "^0.19.2"
+click = "8.0.2" # FIXME temporary fix for black
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
