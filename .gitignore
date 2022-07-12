@@ -120,6 +120,8 @@ dmypy.json
 # VIM
 *.sw[op]
 
+# GitLab CI
+.gitlab_token
+
 # Project
 .env
-.gitlab_token

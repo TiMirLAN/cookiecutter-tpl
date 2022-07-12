@@ -45,8 +45,3 @@ repos:
     hooks:
     -   id: prettier
         types: [python, yaml]
-
--   repo: https://gitlab.com/devopshq/gitlab-ci-linter
-    rev: v1.0.4
-    hooks:
-    -   id: gitlab-ci-linter
