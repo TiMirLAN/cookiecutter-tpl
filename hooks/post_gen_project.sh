@@ -2,7 +2,8 @@
 
 git init
 
-poetry install
+poetry init
+poetry add -D pre-commit isort black flake8 mypy
 poetry run pre-commit install
 
 
