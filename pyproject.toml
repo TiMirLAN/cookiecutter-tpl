@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-tpl"
-version = "0.1.0"
+version = "1.0.1"
 description = ""
 authors = ["Tim Mironov <timirlan666@gmail.com>"]
 
