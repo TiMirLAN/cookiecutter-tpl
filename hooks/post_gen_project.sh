@@ -1,9 +1,24 @@
 #!/usr/bin/env bash
 
+
+on_int() {
+    exit 1
+}
+
+trap on_int INT
+
 git init
 
-poetry init
-poetry add -D pre-commit isort black flake8 mypy
+echo "{{cookiecutter.interactive_poetry}}"
+poetry init\
+    {% if cookiecutter.interactive_poetry != "y" %}-q\{% endif %}
+    --author='{{ cookiecutter.author }}'\
+    --dev-dependency=pre-commit\
+    --dev-dependency=isort\
+    --dev-dependency=black\
+    --dev-dependency=flake8\
+    --dev-dependency=mypy
+poetry install
 poetry run pre-commit install
 
 
