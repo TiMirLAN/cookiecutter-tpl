@@ -13,6 +13,7 @@ echo "{{cookiecutter.interactive_poetry}}"
 poetry init\
     {% if cookiecutter.interactive_poetry != "y" %}-q\{% endif %}
     --author='{{ cookiecutter.author }}'\
+    --dependency=pydantic\
     --dev-dependency=pre-commit\
     --dev-dependency=isort\
     --dev-dependency=black\
