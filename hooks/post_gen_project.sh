@@ -10,6 +10,7 @@ trap on_int INT
 git init
 
 echo "{{cookiecutter.interactive_poetry}}"
+poetry config virtualenvs.in-project true
 poetry init\
     {% if cookiecutter.interactive_poetry != "y" %}-q\{% endif %}
     --author='{{ cookiecutter.author }}'\
