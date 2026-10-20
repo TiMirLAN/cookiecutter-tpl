@@ -3,7 +3,7 @@
   "project_name": "{{ cookiecutter.full_name.lower().replace(' ', '-').replace('_', '-') }}",
   "project_slug": "{{ cookiecutter.project_name.replace('-', '_') }}",
   "author": "Tim Mironov <timirlan666@gmail.com>",
-  "interactive_poetry": "n",
+  "python_version": "3.12",
   "install_sentry": "n",
   "install_loguru": "n"
 }

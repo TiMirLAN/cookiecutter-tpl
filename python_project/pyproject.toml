@@ -1,27 +1,22 @@
-[tool.poetry]
+[project]
 name = "cookiecutter-tpl"
 version = "1.0.1"
 description = ""
-authors = ["Tim Mironov <timirlan666@gmail.com>"]
+authors = [{ name = "Tim Mironov", email = "timirlan666@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[dependency-groups]
+dev = [
+    "cookiecutter>=2.6",
+    "pre-commit",
+    "pytest",
+    "pytest-cookies",
+    "ruff",
+]
 
-[tool.mypy]
-ignore_missing_imports = true
+[tool.uv]
+package = false
 
-[tool.poetry.dev-dependencies]
-pre-commit = "^2.19.0"
-isort = "^5.10.1"
-black = "^22.6.0"
-flake8 = "^4.0.1"
-mypy = "^0.961"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.3.2"
-cookiecutter = "^2.1.1"
-pytest-cookies = "^0.7.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.ruff]
+line-length = 88

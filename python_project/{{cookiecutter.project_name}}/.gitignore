@@ -77,8 +77,6 @@ docs/_build/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
 
 # IPython
 profile_default/
@@ -89,13 +87,9 @@ target/
 
 # Cookiecutter
 output/
-python_boilerplate/
-cookiecutter-pypackage-env/
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Ruff
+.ruff_cache/
 
 # Pyre type checker
 .pyre/
@@ -115,8 +109,6 @@ dmypy.json
 # VS code
 .vscode
 
-# PyEnv
-.python-version
 
 # VIM
 *.sw[op]
