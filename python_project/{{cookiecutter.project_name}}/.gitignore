@@ -116,3 +116,6 @@ output/
 # Project
 .env
 .gitlab_token
+
+# Local agent instructions
+LOCAL_AGENTS.md

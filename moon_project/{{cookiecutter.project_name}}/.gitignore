@@ -29,3 +29,6 @@ dist/
 .vscode/
 *.swp
 .DS_Store
+
+# Local agent instructions
+LOCAL_AGENTS.md
