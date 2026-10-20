@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      # proto installs moon and uv pinned in .prototools.
+      - uses: moonrepo/setup-toolchain@v0
+        with:
+          auto-install: true
+      - run: moon ci

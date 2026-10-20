@@ -1,0 +1,32 @@
+[project]
+name = "{{ cookiecutter.project_name }}-example"
+version = "0.1.0"
+description = "Example Python app"
+requires-python = ">={{ cookiecutter.python_version }}"
+dependencies = []
+
+[project.scripts]
+{{ cookiecutter.project_name }}-example = "{{ cookiecutter.project_slug }}_example:main"
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "{{ cookiecutter.project_slug }}_example"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py{{ cookiecutter.python_version.replace('.', '') }}"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

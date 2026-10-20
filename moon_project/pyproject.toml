@@ -1,0 +1,26 @@
+[project]
+name = "cookiecutter-tpl-moon"
+version = "0.1.0"
+description = ""
+authors = [{ name = "Tim Mironov", email = "timirlan666@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "cookiecutter>=2.6",
+    "pytest",
+    "pytest-cookies",
+    "pyyaml",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint.per-file-ignores]
+# The hook is a Jinja template: rendered values look like constant comparisons.
+"hooks/*.py" = ["EXE001", "PLR0133"]

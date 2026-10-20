@@ -1,0 +1,31 @@
+# moon
+.moon/cache
+.moon/docker
+
+# dependencies
+node_modules/
+.venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# local data and env
+*.local
+.env
+.env.*
+!example.env
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store

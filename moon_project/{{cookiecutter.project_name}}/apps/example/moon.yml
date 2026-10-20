@@ -1,0 +1,37 @@
+# https://moonrepo.dev/docs/config/project
+# Python dependencies are managed by uv (pyproject.toml / uv.lock).
+$schema: "../../.moon/cache/schemas/project.json"
+
+project:
+  title: "example"
+  description: "Example Python app"
+  owner: "{{ cookiecutter.author.split('<')[0].strip() }}"
+
+language: "python"
+stack: "backend"
+layer: "application"
+
+fileGroups:
+  sources:
+    - "src/**/*"
+    - "pyproject.toml"
+    - "uv.lock"
+  tests:
+    - "tests/**/*"
+
+tasks:
+  setup:
+    command: "uv sync"
+    inputs: ["pyproject.toml", "uv.lock"]
+  dev:
+    command: "uv run {{ cookiecutter.project_name }}-example"
+    deps: ["setup"]
+    preset: "server"
+  test:
+    command: "uv run pytest"
+    inputs: ["@group(sources)", "@group(tests)"]
+    deps: ["setup"]
+  lint:
+    script: "uv run ruff check . && uv run ruff format --check ."
+    inputs: ["@group(sources)", "@group(tests)"]
+    deps: ["setup"]
