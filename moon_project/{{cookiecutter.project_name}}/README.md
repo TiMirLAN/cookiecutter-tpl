@@ -3,6 +3,19 @@
 Monorepo managed by [moon](https://moonrepo.dev) with tools pinned by
 [proto](https://moonrepo.dev/proto) in `.prototools`.
 
+## Tech stack
+
+| Area | Tool |
+| --- | --- |
+| Monorepo task runner | [moon](https://moonrepo.dev) |
+| Toolchain manager | [proto](https://moonrepo.dev/proto) (versions in `.prototools`) |
+| Python packaging | [uv](https://docs.astral.sh/uv/) |
+| Python lint and format | [ruff](https://docs.astral.sh/ruff/) |
+| Python tests | [pytest](https://docs.pytest.org) |
+| CI | GitHub Actions via `moonrepo/setup-toolchain` and `moon ci` |
+
+Python {{ cookiecutter.python_version }}+ is the baseline for Python projects.
+
 ## Getting started
 
 ```bash
@@ -17,4 +30,13 @@ moon run :setup        # install dependencies of every project
 - `moon run <project>:dev` — start a project in dev mode
 - `moon ci` — what CI runs
 
-Projects live in `apps/*` and `packages/*`.
+## Layout
+
+```
+apps/        deployable applications (one moon project each)
+packages/    shared libraries
+.moon/       moon workspace configuration
+.prototools  pinned tool versions
+```
+
+Projects are discovered from `apps/*` and `packages/*`; each needs a `moon.yml`.
