@@ -1,5 +1,5 @@
 # Toolchain versions for the whole monorepo, managed by proto:
 # https://moonrepo.dev/docs/proto
 # `proto use` installs everything listed here.
-moon = "2.6.0"
-uv = "0.12.23"
+moon = "2.6.2"
+uv = "0.13.4"

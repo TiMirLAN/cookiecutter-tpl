@@ -24,8 +24,8 @@ jobs:
       GIT_COMMITTER_NAME: ci
       GIT_COMMITTER_EMAIL: ci@example.com
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.0
         with:
           enable-cache: true
           cache-dependency-glob: ${{ matrix.template }}/uv.lock
